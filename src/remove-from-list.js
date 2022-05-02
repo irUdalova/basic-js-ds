@@ -29,14 +29,14 @@ function removeKFromList(list, k) {
   }
 
   let current = list.next;
-  let prev = list;  
+  let prev = list;
 
   while (current) {
     if (current.value === k) {
       prev.next = current.next;
-      return removeKFromList(list, k);
+    } else {
+      prev = current;
     }
-    prev = current;
     current = current.next;
   }
   return list;  
